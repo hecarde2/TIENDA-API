@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riwi Shop</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-950 text-white min-h-screen">
+
+    <!-- HEADER -->
+    <header class="border-b border-zinc-800 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-bold">
+                🛒 Riwi Shop
+            </h1>
+        </div>
+    </header>
+
+    <!-- BUSCADOR -->
+    <section class="max-w-7xl mx-auto px-6 py-8">
+        <div class="flex gap-4">
+            <form class="flex gap-4 w-full" id="frm-search">
+                <input type="text" placeholder="Buscar producto..."
+                    class="flex-1 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 outline-none focus:border-blue-500" />
+
+                <button type="submit" class="bg-blue-600 hover:bg-blue-500 px-6 rounded-xl">
+                    Buscar
+                </button>
+            </form>
+        </div>
+        <select id="select-categoria" onchange="getByCategory(this.value, 1)" class="bg-blue-600 hover:bg-red-500 px-6">
+    <    <option value="">-- Selecciona una categoría --</option>>
+        <option value="beauty">Beauty</option>
+        <option value="fragrances">Fragrances</option>
+        <option value="furniture">Furniture</option>
+        <option value="groceries">Groceries</option>
+        <option value="home-decoration">Home Decoration</option>
+        <option value="kitchen-accessories">Kitchen Accessories</option>
+        <option value="laptops">Laptops</option>
+        <option value="mens-shirts">Mens Shirts</option>
+        <option value="mens-shoes">Mens Shoes</option>
+        <option value="mens-watches">Mens Watches</option>
+        <option value="mobile-accessories">Mobile Accessories</option>
+        <option value="motorcycle">Motorcycle</option>
+        <option value="skin-care">Skin Care</option>
+        <option value="smartphones">Smartphones</option>
+        <option value="sports-accessories">Sports Accessories</option>
+        <option value="sunglasses">Sunglasses</option>
+        <option value="tablets">Tablets</option>
+        <option value="tops">Tops</option>
+        <option value="vehicle">Vehicle</option>
+        <option value="womens-bags">Womens Bags</option>
+        <option value="womens-dresses">Womens Dresses</option>
+        <option value="womens-jewellery">Womens Jewellery</option>
+        <option value="womens-shoes">Womens Shoes</option>
+        <option value="womens-watches">Womens Watches</option>
+        </select>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="max-w-7xl mx-auto px-6 pb-12">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold">
+                Resultados
+            </h2>
+
+            <span class="text-sm text-zinc-400">
+                <span id="quantity">0</span> productos encontrados
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="search-results">
+
+        </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="max-w-7xl mx-auto px-6 pb-12">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold">
+                Catálogo
+            </h2>
+
+            <button 
+                onclick="showAllProducts()"
+                class="text-sm text-zinc-400 hover:text-white">
+                Ver todo
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" id="catalog">
+
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" id="catalog">
+        </div>
+
+        <!-- PAGINACIÓN -->
+       <div class="flex justify-center gap-4 mt-10" id="pagination"></div>
+
+    </section>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
